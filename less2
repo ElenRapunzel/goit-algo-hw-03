@@ -1,0 +1,16 @@
+import random
+
+def get_numbers_ticket(min, max, quantity):
+    if quantity < 1 or min < 1 or max > 1000 or (max-min)+1 < quantity: 
+        return []
+    
+    put_numbers = set()
+    while len(put_numbers) < quantity:
+        put_numbers.add(random.randint(min, max))
+
+    fulllist_numbers = list(put_numbers)
+    fulllist_numbers.sort()
+    return fulllist_numbers
+
+lottery_numbers = get_numbers_ticket(1, 27, 5)
+print("Ваші лотерейні числа:", lottery_numbers)
